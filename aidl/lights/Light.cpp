@@ -126,7 +126,7 @@ static std::vector<LightType> backends = {
     LightType::ATTENTION,
     LightType::BACKLIGHT,
     LightType::BATTERY,
-    LightType::NOTIFICATION,
+    LightType::NOTIFICATIONS,
 };
 
 }  // anonymous namespace
@@ -147,7 +147,7 @@ ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
         case (int) LightType::BATTERY:
             handleNotiflight(state);
             return ndk::ScopedAStatus::ok();
-        case (int) LightType::NOTIFICATION:
+        case (int) LightType::NOTIFICATIONS:
             handleNotiflight(state);
             return ndk::ScopedAStatus::ok();
         default:
